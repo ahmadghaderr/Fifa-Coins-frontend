@@ -1,0 +1,239 @@
+html, body {
+  height: 100%;
+}
+
+body.login-page {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url("../assets/goat.jpg") no-repeat center center fixed;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+  overflow: hidden;
+}
+
+.auth-container {
+  display: flex;
+  height: auto;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  background-color: rgba(242, 242, 242, 0.9);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.auth-container:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  transform: translateY(-5px);
+}
+
+.auth-box {
+  flex: 1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 500px;
+  margin: auto;
+}
+
+.auth-box h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+  color: #2b6777;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #f7f7f7;
+  border-radius: 12px;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.input-field:focus-within {
+  border-color: #2b6777;
+  box-shadow: 0 0 0 2px rgba(43, 103, 119, 0.2);
+}
+
+.input-field input,
+.input-field select {
+  flex: 1;
+  padding: 10px 10px 10px 35px;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+}
+
+.input-icon {
+  position: absolute;
+  left: 15px;
+  color: #555;
+  font-size: 18px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 15px;
+  color: #888;
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+.eye-icon:hover {
+  color: #2b6777;
+}
+
+.error-message {
+  font-size: 13px;
+  color: #e63946;
+  margin-top: -12px;
+  margin-bottom: 5px;
+  padding-left: 5px;
+  font-weight: 500;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #2b6777;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 15px;
+  cursor: pointer;
+  /* transition: all 0.3s ease; */
+  letter-spacing: 0.5px;
+}
+
+.submit-btn:hover {
+  background-color: #235b68;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(43, 103, 119, 0.3);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.toggle-text {
+  text-align: center;
+  margin-top: 25px;
+  color: #555;
+  font-size: 15px;
+}
+
+.toggle-text span {
+  color: #2b6777;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.toggle-text span:hover {
+  text-decoration: underline;
+  color: #1d4a56;
+}
+
+.auth-image-side {
+  flex: 1;
+  background: url("../assets/FC25Cover.jpg") no-repeat center center;
+  background-size: cover;
+  min-height: 500px;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+@media (max-width: 992px) {
+  .auth-image-side {
+    display: none;
+  }
+
+  .auth-box {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body.login-page {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .auth-container {
+    flex-direction: column;
+    max-width: 100%;
+    margin: 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background-color: rgba(242, 242, 242, 0.95);
+    overflow: hidden;
+    max-height: 100vh;
+    height: 100%;
+  }
+
+  .auth-box {
+    padding: 25px 20px;
+    max-width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .auth-box h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .input-box {
+    gap: 15px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-box form {
+  animation: fadeIn 0.5s ease-out;
+}
