@@ -3,6 +3,15 @@ import axios from 'axios';
 import './CalculateHome.css';
 import Navbar from '../Navbar/Navbar';
 
+const formatNumberWithCommas = (num) => {
+  if (!num) return '';
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+};
+
+const parseFormattedNumber = (formatted) => {
+  return formatted.replace(/,/g, '');
+};
+
 const CalculateHome = () => {
   const [playerName, setPlayerName] = useState('');
   const [realPrice, setRealPrice] = useState('');
@@ -97,22 +106,26 @@ const CalculateHome = () => {
             <div className="form-group">
               <label>Buy Price (your price):</label>
               <input
-                type="number"
-                value={buyPrice}
-                onChange={(e) => setBuyPrice(e.target.value)}
+                type="text"
+                value={formatNumberWithCommas(buyPrice)}
+                onChange={(e) => {
+                  const raw = parseFormattedNumber(e.target.value);
+                  if (/^\d*$/.test(raw)) setBuyPrice(raw);
+                }}
                 required
-                min="0"
               />
             </div>
 
             <div className="form-group">
               <label>Real Price (buyer):</label>
               <input
-                type="number"
-                value={realPrice}
-                onChange={(e) => setRealPrice(e.target.value)}
+                type="text"
+                value={formatNumberWithCommas(realPrice)}
+                onChange={(e) => {
+                  const raw = parseFormattedNumber(e.target.value);
+                  if (/^\d*$/.test(raw)) setRealPrice(raw);
+                }}
                 required
-                min="0"
               />
             </div>
 
@@ -156,7 +169,9 @@ const CalculateHome = () => {
               </div>
               <div className="result-item">
                 <span className="result-label">Calculation Date:</span>
-                <span className="result-value">{new Date(result.date).toLocaleString()}</span>
+                <span className="result-value">
+                  {new Date(result.date).toLocaleString()}
+                </span>
               </div>
             </div>
           )}
