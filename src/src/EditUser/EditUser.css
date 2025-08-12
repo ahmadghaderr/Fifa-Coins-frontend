@@ -1,0 +1,110 @@
+.edit-user-page {
+    background: url("../assets/FC25Cover.jpg") no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #f8f8f8;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.edit-user-container {
+  max-width: 480px;
+  margin: 3rem auto;
+  padding: 2rem 2.5rem;
+  background-color: rgba(20, 20, 20, 0.95);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  font-family: 'Montserrat', sans-serif;
+  color: #f8f8f8;
+}
+
+.edit-user-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.8rem;
+  background: linear-gradient(to right, #f1c40f, #fffbe0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+}
+
+.edit-user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.edit-user-form label {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+  color: #f1c40f;
+}
+
+.edit-user-form input[type="text"],
+.edit-user-form input[type="email"],
+.edit-user-form input[type="tel"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #f1c40f;
+  background-color: rgba(40, 40, 40, 0.9);
+  color: #f8f8f8;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  outline: none;
+}
+
+.edit-user-form input[type="text"]:focus,
+.edit-user-form input[type="email"]:focus,
+.edit-user-form input[type="tel"]:focus {
+  border-color: #fffbe0;
+  background-color: rgba(60, 60, 60, 0.9);
+}
+
+.edit-user-form button[type="submit"] {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  background-color: #f1c40f;
+  color: #121212;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(241, 196, 15, 0.5);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-user-form button[type="submit"]:hover {
+  background-color: #fffbe0;
+  transform: translateY(-2px);
+}
+
+.edit-user-message {
+  margin-top: 1.2rem;
+  text-align: center;
+  font-weight: 600;
+  color: #f1c40f;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 480px) {
+  .edit-user-container {
+    margin: 1.5rem 1rem;
+    padding: 1.5rem 1.8rem;
+  }
+
+  .edit-user-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .edit-user-form button[type="submit"] {
+    font-size: 1rem;
+  }
+}
