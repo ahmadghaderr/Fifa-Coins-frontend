@@ -1,5 +1,5 @@
 body.chatbot-no-scroll {
-  overflow: hidden;
+  overflow: auto;
 }
 
 :root {

@@ -1,20 +1,21 @@
 .edit-user-page {
-    background: url("../assets/FC25Cover.jpg") no-repeat center center fixed;
+  background: url("../assets/FC25Cover.jpg") no-repeat center center fixed;
   background-size: cover;
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
   color: #f8f8f8;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%; 
   overflow-y: auto;
+  overflow-x: auto; 
   -webkit-overflow-scrolling: touch;
 }
 
 .edit-user-container {
   max-width: 480px;
-  margin: 3rem auto;
-  padding: 2rem 2.5rem;
+  margin: 48px auto; 
+  padding: 32px 40px; 
   background-color: rgba(20, 20, 20, 0.95);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   border-radius: 12px;
@@ -23,9 +24,9 @@
 }
 
 .edit-user-container h2 {
-  font-size: 2rem;
+  font-size: 32px; 
   font-weight: 700;
-  margin-bottom: 1.8rem;
+  margin-bottom: 28px; 
   background: linear-gradient(to right, #f1c40f, #fffbe0);
   -webkit-background-clip: text;
   background-clip: text;
@@ -36,44 +37,47 @@
 .edit-user-form {
   display: flex;
   flex-direction: column;
-  gap: 1.3rem;
+  gap: 20px; 
 }
 
 .edit-user-form label {
   font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: 0.4rem;
+  font-size: 18px; 
+  margin-bottom: 6px; 
   color: #f1c40f;
 }
 
 .edit-user-form input[type="text"],
 .edit-user-form input[type="email"],
-.edit-user-form input[type="tel"] {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
+.edit-user-form input[type="tel"],
+.edit-user-form input[type="password"] {
+  width: 90%;
+  padding: 12px 16px; 
+  font-size: 16px; 
   border-radius: 8px;
   border: 1.5px solid #f1c40f;
   background-color: rgba(40, 40, 40, 0.9);
   color: #f8f8f8;
   transition: border-color 0.3s ease, background-color 0.3s ease;
   outline: none;
+  margin: 0 auto; 
 }
 
 .edit-user-form input[type="text"]:focus,
 .edit-user-form input[type="email"]:focus,
-.edit-user-form input[type="tel"]:focus {
+.edit-user-form input[type="tel"]:focus,
+.edit-user-form input[type="password"]:focus {
   border-color: #fffbe0;
   background-color: rgba(60, 60, 60, 0.9);
 }
 
 .edit-user-form button[type="submit"] {
-  margin-top: 1rem;
-  padding: 0.85rem 1rem;
+  margin-top: 16px; 
+  padding: 14px 18px; 
   background-color: #f1c40f;
   color: #121212;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 18px; 
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -87,7 +91,7 @@
 }
 
 .edit-user-message {
-  margin-top: 1.2rem;
+  margin-top: 20px; 
   text-align: center;
   font-weight: 600;
   color: #f1c40f;
@@ -96,15 +100,15 @@
 
 @media (max-width: 480px) {
   .edit-user-container {
-    margin: 1.5rem 1rem;
-    padding: 1.5rem 1.8rem;
+    margin: 24px 16px; 
+    padding: 24px 28px; 
   }
 
   .edit-user-container h2 {
-    font-size: 1.6rem;
+    font-size: 26px; 
   }
 
   .edit-user-form button[type="submit"] {
-    font-size: 1rem;
+    font-size: 16px; 
   }
 }

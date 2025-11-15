@@ -14,6 +14,15 @@ const History = () => {
   const [acceptedIds, setAcceptedIds] = useState(new Set());
   const [loading, setLoading] = useState(true);
 
+  const [playerName, setPlayerName] = useState('');
+  const [realPrice, setRealPrice] = useState(0);
+  const [buyPrice, setBuyPrice] = useState(0);
+  const [afterTax, setAfterTax] = useState(0);
+  const [coinProfit, setCoinProfit] = useState(0);
+  const [moneyProfit, setMoneyProfit] = useState(0);
+  const [rate, setRate] = useState(0);
+  const [date, setDate] = useState('');
+
   useEffect(() => {
     const fetchHistoryAndTotals = async () => {
       try {
@@ -102,7 +111,6 @@ const History = () => {
             <table className="history-table">
               <thead>
                 <tr>
-                  <th>ID</th>
                   <th>Player</th>
                   <th>Real Price</th>
                   <th>Buy Price</th>
@@ -117,14 +125,13 @@ const History = () => {
               <tbody>
                 {history.length === 0 ? (
                   <tr className="empty-row">
-                    <td colSpan="10">No history available</td>
+                    <td colSpan="9">No history available</td>
                   </tr>
                 ) : (
                   history.map((item) => {
                     const accepted = acceptedIds.has(item._id);
                     return (
                       <tr key={item._id} className={accepted ? 'accepted-row' : ''}>
-                        <td>{item._id}</td>
                         <td>{item.player_name}</td>
                         <td>{item.real_price.toLocaleString()}</td>
                         <td>{item.buy_price.toLocaleString()}</td>

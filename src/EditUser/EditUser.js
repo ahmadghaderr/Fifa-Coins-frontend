@@ -10,6 +10,7 @@ const EditUser = () => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
   useEffect(() => {
@@ -30,7 +31,7 @@ const EditUser = () => {
 
       try {
         const response = await fetch(
-          `http://127.0.0.1:8000/api/user/get/${storedUserId}`,
+          `https://fifa-coins-backend.onrender.com/api/user/get/${storedUserId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -76,9 +77,13 @@ const EditUser = () => {
       phone,
     };
 
+    if (password.trim() !== "") {
+      updateData.password = password;
+    }
+
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/user/edit/${storedUserId}`,
+        `https://fifa-coins-backend.onrender.com/api/user/edit/${storedUserId}`,
         {
           method: "PUT",
           headers: {
@@ -123,6 +128,13 @@ const EditUser = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+            />
+            <label>Password:</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Leave blank to keep unchanged"
             />
             <label>Phone:</label>
             <input

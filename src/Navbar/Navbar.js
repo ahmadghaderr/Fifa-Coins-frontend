@@ -73,7 +73,7 @@ const Navbar = () => {
   const menuItems = [
     { label: 'Calculate Home', path: '/calculateHome' },
     { label: 'History', path: '/history' },
-    { label: 'Chatbot', path: '/chatbot' },
+    // { label: 'Chatbot', path: '/chatbot' },
     { label: 'EditUser', path: '/EditUser' },
     ...(isAdmin ? [{ label: 'Admin', path: '/admin' }] : []),
   ];
